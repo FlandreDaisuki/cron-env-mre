@@ -1,0 +1,22 @@
+version: "3.2"
+
+services:
+  playwright-mre:
+    build: playwright
+    image: playwright-mre
+    container_name: playwright-mre
+    environment:
+      - TZ=Asia/Taipei
+      - LANG=zh_TW.UTF-8
+      - SECRET=${FAKE_SECRET}
+    restart: unless-stopped
+  bionic-mre:
+    build: bionic
+    image: bionic-mre
+    container_name: bionic-mre
+    environment:
+      - TZ=Asia/Taipei
+      - LANG=zh_TW.UTF-8
+      - SECRET=${FAKE_SECRET}
+    restart: unless-stopped
+
