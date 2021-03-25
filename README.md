@@ -5,10 +5,16 @@ $ cd cron-env-mre
 $ docker-compose build && docker-compose up -d
 ```
 
+## Solved
+
+[Explanation: How cron omit environment variables](https://tonytonyjan.net/2018/07/08/how-cron-omit-environment-variables/)
+
+Use `busybox` instead
+
 ## Question
 
-* What is the best way to get environment variables in cron/crontab?
-* If I replace `mv env.cron /etc/cron.d/env.cron` with `env | cat - env.cron > /etc/cron.d/env.cron`, we can get env variables. However the secrets left in file by this method, is this ok?
+* ~~What is the best way to get environment variables in cron/crontab?~~
+* ~~If I replace `mv env.cron /etc/cron.d/env.cron` with `env | cat - env.cron > /etc/cron.d/env.cron`, we can get env variables. However the secrets left in file by this method, is this ok?~~
 
 **If no best practice for this, please recommend some other lightweight scheduling solution in container, BIG THANKS!!**
 

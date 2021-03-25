@@ -2,10 +2,8 @@
 
 cd /root || exit
 
-# env | cat - env.cron > /etc/cron.d/env.cron
-mv env.cron /etc/cron.d/env.cron
+crontab env.cron
 
-chmod 0644 /etc/cron.d/env.cron
-crontab /etc/cron.d/env.cron
+crontab -l
 
-touch /root/cron.log
+crond -l 2 -f
